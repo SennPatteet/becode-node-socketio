@@ -254,6 +254,10 @@ button:hover {
     padding-bottom: 0px;
     margin-bottom: 10px;
     flex-wrap: wrap;
+    background-color: white;
+    border-radius: 10px;
+    width: 50%;
+    color: #ED4266;
 }
 
 .message-right {
@@ -262,6 +266,7 @@ button:hover {
     background-color: white;
     border-radius: 10px;
     width: 50%;
+    margin-left: 360px;
 }
 
 .message-details {

@@ -259,7 +259,7 @@ button:hover {
 .message-right {
     color: #ED4266;
     text-align: right;
-
+    background-color: white;
 }
 
 .message-details {

@@ -157,7 +157,7 @@ form.messageForm button {
 }
 
 body {
-    font-family: 'helvetica', 'arial', sans-serif;
+  font-family: 'Electrolize', sans-serif;
     font-weight: 300;
 }
 
@@ -194,12 +194,13 @@ body {
 #appcontainer {
     height: 100vh;
     width: 100vw;
-    background-color: #FFF0CF;
+    background-color: black;
 }
 
 
 #login {
-    background-color: #F0C709;
+    background-color: black;
+    border: solid 1px #6BB05D;
     padding: 40px 100px;
     /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); */
 }
@@ -212,41 +213,42 @@ body {
 input {
     height: 40px;
     padding: 10px;
-    background-color: white;
-    border: none;
+    background-color: black;
+    border: solid 1px #6BB05D;
 }
 
 input::placeholder {
-  color: black;
+  color: white;
 }
 
 input:focus {
   outline: none;
+  caret-color: white;
+  color: #9BE98F;
 }
 
 button {
     height: 40px;
     padding: 0 15px;
-    background-color: #ED4266;
+    background-color: #6BB05D;
     color: white;
     border: none;
 }
 
 button:hover {
-  background-color: #DC1C19;
-  color: white;
-  transition-timing-function: ease-in-out;
-  transition: 0.3s;
+  background-color: #6BB05D;
+  color: black;
 }
 
 #chat {
-    background-color: #F0C709;
+    background-color: black;
     padding: 25px;
     margin: 25px;
     color: white;
     overflow-y: scroll;
     overflow-x: hidden;
-    width: 60%;
+    width: 90%;
+    border: 2px solid green;
 }
 
 .message {
@@ -254,19 +256,24 @@ button:hover {
     padding-bottom: 0px;
     margin-bottom: 10px;
     flex-wrap: wrap;
-    background-color: white;
+    background-color: black;
     border-radius: 10px;
-    width: 50%;
-    color: #ED4266;
+    width: 45%;
+    color: #6BB05D;
+    border: solid 1px #6BB05D;
+
+    padding-bottom: 10px;
 }
 
 .message-right {
-    color: #ED4266;
-    text-align: right;
-    background-color: white;
+    color: #6BB05D;
+    text-align: left;
+    background-color: black;
     border-radius: 10px;
-    width: 50%;
-    margin-left: 360px;
+    border: solid 1px #6BB05D;
+    width: 45%;
+    margin-left: 600px;
+    padding-bottom: 10px;
 }
 
 .message-details {
@@ -275,5 +282,5 @@ button:hover {
 }
 
 .message-author {
-    font-weight: 800;
+    color: white;
 }

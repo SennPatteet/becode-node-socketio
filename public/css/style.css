@@ -260,6 +260,8 @@ button:hover {
     color: #ED4266;
     text-align: right;
     background-color: white;
+    border-radius: 10px;
+    width: 50%;
 }
 
 .message-details {

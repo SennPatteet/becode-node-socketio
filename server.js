@@ -1,47 +1,46 @@
 const express = require('express');
-const app = express();
-
+const app = require('express')();
 const server = require('http').createServer(app);
-
 const io = require('socket.io').listen(server);
 
-const nodemon = require('nodemon');
+app.use(express.static('public'));
+
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/views/index.html');
+});
+
+
+io.on('connection', socket => {
+    console.log('a user connected');
+
+  	//default username
+	socket.username = "Anonymous"
+
+    //listen on change_username
+    socket.on('change_username', (data) => {
+        socket.username = data.username
+    })
+    socket.on('disconnect', () => {
+        console.log('user disconnected')
+    })
+
+    // socket.on('chat message',  msg => {
+    //     io.emit('chat message', msg);
+    //     console.log('message: ' + msg);
+    // });
+    socket.on('message', (message) => {
+        //broadcast the new message
+        // io.sockets.emit('new_message', {message : data.message, username : socket.username});
+        io.emit('message', message)
+    })
+});
 
 server.listen(process.env.PORT || 3000);
 console.log('Server running...');
 
-app.set('view engine', 'ejs');
-
-app.use(express.static('public'));
 
 
-// ROUTES -------------------------------------------------------
 
-app.get('/', function(req, res){
-  res.sendFile(__dirname + '/views/index.html');
-});
 
-io.on('connection', function(socket){
-  console.log('a user connected');
-  socket.on('disconnect', function(){
-    console.log('user disconnected');
-  });
-});
-
-io.on('connection', function(socket){
-  socket.on('chat message', function(msg){
-    console.log('message: ' + msg);
-  });
-});
-
-io.emit('some event', { for: 'everyone' });
-
-io.on('connection', function(socket){
-  socket.broadcast.emit('hi');
-});
-
-io.on('connection', function(socket){
-  socket.on('chat message', function(msg){
-    io.emit('chat message', msg);
-  });
-});
+// const messageTypes = {LEFT :'left', RIGHT:'right', LOGIN: 'login'};
+// const message= [];

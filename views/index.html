@@ -1,41 +1,78 @@
-<!doctype html>
 
-<html lang="en">
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
 
 <head>
-
-  <!-- META --------------------------------------------------------->
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- TITLE --------------------------------------------------------->
-  <title>Chat App</title>
-
-  <!-- LINKS --------------------------------------------------------->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-  <link rel="stylesheet" href="/css/normalize.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css" type="text/css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-
 </head>
 
 <body>
 
-  <ul id="messages"></ul>
-      <form action="">
-        <input id="m" autocomplete="off" /><button>Send</button>
-      </form>
+  <!-- <section>
+            <div id="change_username">
+          <input id="username" type="text" />
+          <button id="send_username" type="button">Change username</button>
+            </div>
+          </section>
 
+          <section id="chatroom">
+            <section id="feedback"></section>
+          </section>
+
+
+
+          <section id="input_zone">
+            <input id="message" class="vertical-align" type="text" />
+            <button id="send_message" class="vertical-align" type="button">Send</button>
+          </section> -->
+  <div id="appcontainer" class="flex-column">
+    <div id="maincontent" class= "container flex-grow-1 flex-column flex-center">
+      <section id="login" >
+        <form action="" id="loginform" class="flex">
+          <input type="text" id="usernameInput" name="username" placeholder="username" class="flex-grow-1">
+          <button id="loginBtn">chat</button>
+        </form>
+      </section>
+      <section id="chat" class="hidden flex-grow-1 flex-column">
+        <div id="messagesList" class="flex-grow-1">
+          <!-- <div class="message message_left">
+            <div class="message-details" class="flex">
+              <p class="message-author">someone</p> -->
+            </div>
+            <!-- <p class="messagecontent">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo deleniti nam sapiente quod quibusdam ad exercitationem fugit consequuntur, numquam repellat adipisci impedit eligendi rerum, doloribus soluta perferendis voluptates dignissimos porro!</p>
+          </div>
+          <div class="message message_right">
+            <div class="message-details" class="flex">
+              <p class="message-author"></p>
+            </div>
+            <p class="messagecontent">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo deleniti nam sapiente quod quibusdam ad exercitationem fugit consequuntur, numquam repellat adipisci impedit eligendi rerum, doloribus soluta perferendis voluptates dignissimos porro!</p>
+
+          </div>
+          <p class="text-center mb-2">someone joined the chat..</p>
+        </div> -->
+        <form action="" id="messageform" class="flex">
+          <input type="text" name="message" id="messageInput" class="flex-grow-1">
+          <button id="sendBtn">Send</button>
+        </form>
+      </section>
+    </div>
   </div>
 
 
-  <!-- JAVASCRIPT --------------------------------------------------------->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="/js/scripts.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
   <script src="/socket.io/socket.io.js"></script>
   <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+  <script src="/js/scripts.js"></script>
 
 </body>
 
